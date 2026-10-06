@@ -5,7 +5,7 @@ export const cvData = {
         email: "Jackuzell05@gmail.com",
         github: "https://github.com/JackUzell",
     },
-    skills: ["JavaScript", "React", "Node.js", "Express.js", "HTML", "CSS", "Git", "Lansweeper", "Java", "Jamf", "Intune"],
+    skills: ["JavaScript ", " React ", " Node.js ", " Express.js ", " HTML ", " CSS ", " Git ", " Lansweeper ", " Java ", " Jamf ", " Intune"],
     projects: [
         {
             id: 1,
@@ -17,6 +17,7 @@ export const cvData = {
     ],
     experience: [
         {
+            experienceId: 1,
             title: "Desktop Engineer Intern",
             company: "Workhuman",
             startDate: "February 2026",
@@ -24,6 +25,7 @@ export const cvData = {
             description: "Worked as a Desktop Engineer Intern at Workhuman, gaining hands-on experience in IT support and desktop management.",
         },
         {
+            experienceId: 2,
             title: "Retail Sales Assistant",
             company: "Flannels",
             startDate: "September 2023",
