@@ -62,7 +62,7 @@ export const cvData = {
                 "Served as primary point of contact for customer and staff technical enablement across Ireland and European operations, closing 600+ user tickets with outstanding satisfaction ratings.",
                 "Conducted live, interactive onboarding walkthroughs for new corporate hires, demonstrating technical workflows with patience and clear communication.",
                 "Managed cataloging, hardware stock audits, and device lifecycles using enterprise management tools with strict attention to inventory accuracy and compliance.",
-                "Earned 35+ internal peer recognition awards (€2,000 equivalent value) for exceptional interpersonal support, proactive problem-solving, and positive workplace culture."
+                "Earned 35+ internal peer recognition awards for exceptional interpersonal support, proactive problem-solving, and positive workplace culture."
             ]
         },
         {
