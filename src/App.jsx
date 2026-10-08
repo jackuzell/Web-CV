@@ -16,7 +16,7 @@ function App() {
       const stored = localStorage.getItem('theme');
       if (stored) return stored;
     }
-    return 'light'; // Default to light mode
+    return 'dark'; // Default to dark mode
   });
 
   useEffect(() => {
