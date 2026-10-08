@@ -1,35 +1,29 @@
-import React from 'react';
+import SectionHeader from './SectionHeader';
+import { section } from './ui';
 
-function About( {personalInfo }) {
-    return (
-        <section id="about" className="about-section">
-            <div className="section-header">
-                <h3 className="section-title">About Me</h3>
-                <p className="section-subtitle">Background, core focus and engineering mindset</p>
+function About({ personalInfo, stats = [] }) {
+  return (
+    <section id="about" className={section}>
+      <SectionHeader title="About me" subtitle="Background, core focus and engineering mindset" />
+
+      <p className="max-w-2xl text-[15px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+        {personalInfo.summary}
+      </p>
+
+      {stats.length > 0 && (
+        <dl className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-zinc-200 bg-zinc-200 sm:grid-cols-4 dark:border-zinc-800/80 dark:bg-zinc-800/80">
+          {stats.map((stat) => (
+            <div key={stat.label} className="flex flex-col-reverse gap-2 bg-white p-5 dark:bg-zinc-950">
+              <dt className="text-xs leading-snug text-zinc-500">{stat.label}</dt>
+              <dd className="text-2xl font-semibold tracking-tight text-zinc-900 tabular-nums dark:text-zinc-100">
+                {stat.value}
+              </dd>
             </div>
-            <div className="about-content">
-                <p className="about-text"> {personalInfo.summary}</p>
-                <div className="about-highlights-grid">
-                    <div className="about-highlights-card">
-                        <span className="highlight-number">77.4%</span>
-                        <span className="highlight-label">3rd Year CS Annual Mark (1st Class)</span>
-                    </div>
-                    <div className="about-highlight-card">
-                        <span className="highlight-number">95%</span>
-                        <span className="highlight-label">Software Design Module Mark</span>
-                    </div>
-                    <div className="about-highlight-card">
-                        <span className="highlight-number">600+</span>
-                        <span className="highlight-label">User Tickets Closed at Workhuman</span>
-                    </div>
-                    <div className="about-highlight-card">
-                        <span className="highlight-number">35+</span>
-                        <span className="highlight-label">Peer Recognition Awards</span>
-                    </div>
-                </div>
-            </div> 
-        </section>
-    );
+          ))}
+        </dl>
+      )}
+    </section>
+  );
 }
 
-export default About; 
+export default About;

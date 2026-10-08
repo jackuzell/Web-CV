@@ -1,53 +1,55 @@
-import React from 'react';
+import SectionHeader from './SectionHeader';
+import { badge, badgeStrong, card, cardTitle, label, meta, section } from './ui';
 
 function Education({ educationList = [] }) {
-    return (
-        <section id="education" className="education-section">
-            <div className="section-header">
-                <h3 className="section-title">Education and Academic Results</h3>
-                <p className="section-subtitle">Academic qualifications and standout module performances</p>
-            </div>
-            
-            <div className="education-grid">
-                {educationList.map((edu) => (
-                    <div key={edu.id} className="education-card">
-                        <div className="education-card-header">
-                            <div>
-                                <h4 className="institution-name">{edu.institution}</h4>
-                                <h5 className="degree-title">{edu.degree}</h5>
-                            </div>
-                            <div className="education-period-badge">
-                                <span> {edu.period} </span>
-                            </div>
-                        </div>
+  return (
+    <section id="education" className={section}>
+      <SectionHeader
+        title="Education & academic results"
+        subtitle="Academic qualifications and standout module performances"
+      />
 
-                        <div className="education-status-bar">
-                            <span className="status-pill">{edu.status}</span>
-                            <span className="grade-pill">{edu.annualMark}</span>
-                            {edu.creditsEarned && (
-                                <span className="credits-pill">{edu.creditsEarned}</span>
-                            )}
-                        </div>
-
-                        {edu.topModules && edu.topModules.length > 0 && (
-                            <div className="top-modules-container">
-                                <h6 className="modules-heading">Standout Modules & Grades:</h6>
-                                <div className="modules-grid">
-                                    {edu.topModules.map((module) => (
-                                        <div key={module.code} className="module-card">
-                                            <span className="module-code">{module.code}</span>
-                                            <span className="module-name">{module.name}</span>
-                                            <span className="module-grade">{module.grade}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                ))}
+      <div className="flex flex-col gap-4">
+        {educationList.map((edu) => (
+          <article key={edu.id} className={`${card} p-6`}>
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+              <div>
+                <h3 className={cardTitle}>{edu.institution}</h3>
+                <p className="mt-0.5 text-sm text-zinc-600 dark:text-zinc-400">{edu.degree}</p>
+              </div>
+              <span className={`${meta} shrink-0 leading-6 whitespace-nowrap`}>{edu.period}</span>
             </div>
-        </section>
-    );
+
+            <div className="mt-4 flex flex-wrap gap-2">
+              {edu.status && <span className={badge}>{edu.status}</span>}
+              {edu.annualMark && <span className={badgeStrong}>{edu.annualMark}</span>}
+              {edu.creditsEarned && <span className={badge}>{edu.creditsEarned}</span>}
+            </div>
+
+            {edu.topModules?.length > 0 && (
+              <div className="mt-6 border-t border-zinc-200 pt-5 dark:border-zinc-800/80">
+                <h4 className={label}>Standout modules</h4>
+                <ul className="mt-2 grid sm:grid-cols-2 sm:gap-x-8">
+                  {edu.topModules.map((module) => (
+                    <li
+                      key={module.code}
+                      className="grid grid-cols-[3.5rem_minmax(0,1fr)_auto] items-baseline gap-3 border-b border-zinc-200 py-2.5 dark:border-zinc-800/80"
+                    >
+                      <span className={meta}>{module.code}</span>
+                      <span className="text-sm text-zinc-900 dark:text-zinc-100">{module.name}</span>
+                      <span className="font-mono text-[13px] font-medium text-zinc-900 tabular-nums dark:text-zinc-100">
+                        {module.grade}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 export default Education;

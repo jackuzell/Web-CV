@@ -11,6 +11,13 @@ export const cvData = {
         summary: "Final-year Computer Science & Software Engineering student at Maynooth University holding a First-Class Honours standard (77.4% 3rd Year mark, 95% in Software Design). Combining strong software engineering principles (Java, React, Node.js, SQL, Software Testing) with hands-on corporate IT enablement from a 6-month placement at Workhuman, resolving 600+ tickets and earning 35+ peer awards. Proven leadership and communication skills as a treble-winning football captain, certified LIFT facilitator and retail keyholder."
     },
 
+    stats: [
+        { value: "77.4%", label: "3rd Year annual mark (First Class)" },
+        { value: "95%", label: "Software Design module mark" },
+        { value: "600+", label: "User tickets closed at Workhuman" },
+        { value: "35+", label: "Peer recognition awards" }
+    ],
+
     education: [
         {
             id: "mu",
@@ -34,13 +41,12 @@ export const cvData = {
         },
         {
             id: "setanta",
-            institution: "Collaiste Pobail Setanta",
+            institution: "Coláiste Pobail Setanta",
             degree: "Leaving Certificate",
             period: "2017 - 2023",
             status: "Completed",
             annualMark: "420 CAO Points (2023)",
-            creditsEarned: "Honors in English, Geograohy, Biology, Physical Education and Spanish"
-
+            creditsEarned: "Honours in English, Geography, Biology, Physical Education and Spanish"
         }
     ],
 
@@ -51,7 +57,7 @@ export const cvData = {
             company: "Workhuman",
             location: "Dublin, Ireland",
             period: "February 2026 - August 2026",
-            placementType: " 6-Month Internship",
+            placementType: "6-Month Internship",
             highlights: [
                 "Served as primary point of contact for customer and staff technical enablement across Ireland and European operations, closing 600+ user tickets with outstanding satisfaction ratings.",
                 "Conducted live, interactive onboarding walkthroughs for new corporate hires, demonstrating technical workflows with patience and clear communication.",
