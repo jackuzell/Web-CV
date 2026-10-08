@@ -2,7 +2,7 @@ import React from 'react';
 
 function Experience ( {experienceList} ) {
     return (
-        <section className = "eperience-section">
+        <section className = "experience-section">
             <h3>Experience</h3>
             <div className = "experience-grid">
                 {experienceList.map((experience) => (
