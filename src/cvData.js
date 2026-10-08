@@ -4,7 +4,6 @@ export const cvData = {
         tagline: "4th Year Computer Science and Software Engineering Student",
         subTagline: "First Class Academic Track Record | Desktop and Systems Engineering Placement Alumni",
         location: "Clonee, Co. Dublin, Ireland",
-        phone: "+353 83 828 3870",
         email: "jackuzell05@gmail.com",
         github: "https://github.com/JackUzell",
         linkedin: "https://www.linkedin.com/in/jack-uzell-962b68380/?isSelfProfile=true",
